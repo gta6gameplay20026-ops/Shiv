@@ -7,7 +7,8 @@ Kannada history reel, 9:16, 1080×1920, 30 s, in the style of the Katheyache ref
 |------|------------|
 | `SCENE_PROMPTS.md` | Six AI image/video prompts with timings, camera moves, negative prompt and settings |
 | `build.py` | Builds the finished reel: voice + music + Kannada subtitles + your clips |
-| `output/kadamba_reel.mp4` | Current animatic (placeholder visuals, guide voice, music, burned-in Kannada subtitles) |
+| `output/kadamba_reel.mp4` | Finished 30 s reel: animated cinematic silhouette scenes, guide voice, music, burned-in Kannada subtitles |
+| `scenes/` | Code-drawn animated scenes (canvas + Playwright) used when no AI clip is supplied |
 | `output/captions_kn.srt` / `.ass` | Kannada subtitles, timed to the narration |
 | `output/voice_guide.wav` | Robotic guide voice (espeak-ng) for timing only; re-record with a real voice |
 | `output/music_bed.wav` | Synthesised drone + war-drum bed (placeholder for epic music) |
@@ -22,9 +23,9 @@ Kannada history reel, 9:16, 1080×1920, 30 s, in the style of the Katheyache ref
    ```bash
    python3 build.py
    ```
-   Output: `output/kadamba_reel.mp4`, ready for Instagram Reels. Missing clips stay as placeholders.
+   Output: `output/kadamba_reel.mp4`, ready for Instagram Reels. Any scene without an AI clip uses the built-in drawn scene.
 
-Requirements: `ffmpeg` (with libass) and `espeak-ng` (only for the guide voice).
+Requirements: `ffmpeg` (with libass), `espeak-ng` (guide voice only), Node + Playwright Chromium (drawn scenes).
 
 ## Facts check
 - The Kadamba dynasty was founded by Mayurasharma around 345 CE, after he clashed with the Pallavas at Kanchi.

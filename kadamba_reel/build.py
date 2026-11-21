@@ -206,6 +206,11 @@ def build_scene(k, d):
     clip = find("clips", [f"scene{k}.mp4", f"scene{k}.mov", f"scene{k}.webm"])
     fit = (f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
            f"fps={FPS},setsar=1,format=yuv420p")
+    gen = os.path.join(TMP, "gen", f"scene{k}.mp4")
+    if not clip and os.path.exists(gen):
+        ff("-i", gen, "-t", f"{d:.3f}", "-vf", f"{fit}{dip}",
+           "-c:v", "libx264", "-preset", "medium", "-crf", "18", dst)
+        return dst, True
     if clip:
         # loop if the AI clip is shorter than the slot; slow push-in for life
         ff("-stream_loop", "-1", "-i", clip, "-t", f"{d:.3f}", "-an",
@@ -222,11 +227,30 @@ def build_scene(k, d):
     return dst, bool(clip)
 
 
+def render_generated(bounds):
+    """Draw the built-in cinematic scenes (scenes/scenes.js) for slots without an AI clip."""
+    if os.environ.get("NO_GENERATED") or not shutil.which("node"):
+        return
+    gen = os.path.join(TMP, "gen")
+    shutil.rmtree(gen, ignore_errors=True)
+    env = dict(os.environ)
+    try:
+        env["NODE_PATH"] = subprocess.check_output(["npm", "root", "-g"], text=True).strip()
+    except Exception:
+        pass
+    durs = [f"{e - s + 0.05:.3f}" for s, e in bounds]
+    try:
+        run(["node", os.path.join(ROOT, "scenes", "render.js"), gen, *durs], env=env)
+    except subprocess.CalledProcessError:
+        print("Scene renderer failed (needs Playwright + Chromium); using placeholders.")
+
+
 def main():
     os.makedirs(TMP, exist_ok=True)
     voice, times = build_voice()
     bounds = scene_bounds(times)
     music = build_music()
+    render_generated(bounds)
     scenes = [build_scene(k, e - s) for k, (s, e) in enumerate(bounds, start=1)]
     ass = write_subs(times, bounds, [c for _, c in scenes])
 

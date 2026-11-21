@@ -25,14 +25,8 @@ Dialogue: 1,0:00:21.55,0:00:24.90,Cap,,0,0,0,,{\pos(540,1240)\fad(180,150)}ಕ�
 Dialogue: 1,0:00:24.95,0:00:28.30,Cap,,0,0,0,,{\pos(540,1240)\fad(180,150)}ಇವರೇ ಕರ್ನಾಟಕದ ಪ್ರಾಚೀನ\Nಸ್ಥಳೀಯ ರಾಜವಂಶಗಳಲ್ಲಿ ಪ್ರಮುಖರು!
 Dialogue: 2,0:00:28.35,0:00:30.00,Jai,,0,0,0,,{\pos(540,960)\fad(150,300)\t(0,350,\fscx112\fscy112)}ಜೈ ಕರ್ನಾಟಕ!
 Dialogue: 0,0:00:00.20,0:00:05.35,Label,,0,0,0,,{\fad(250,200)}ಪ್ರಾಚೀನ ಕರ್ನಾಟಕ
-Dialogue: 0,0:00:00.00,0:00:05.45,Note,,0,0,0,,SCENE 1 PLACEHOLDER - put clips/scene1.mp4
 Dialogue: 0,0:00:05.65,0:00:11.46,Label,,0,0,0,,{\fad(250,200)}ಕ್ರಿ.ಶ. 345 · ಮಯೂರಶರ್ಮ
-Dialogue: 0,0:00:05.45,0:00:11.56,Note,,0,0,0,,SCENE 2 PLACEHOLDER - put clips/scene2.mp4
 Dialogue: 0,0:00:11.76,0:00:14.44,Label,,0,0,0,,{\fad(250,200)}ಕದಂಬ × ಪಲ್ಲವ ಯುದ್ಧ
-Dialogue: 0,0:00:11.56,0:00:14.54,Note,,0,0,0,,SCENE 3 PLACEHOLDER - put clips/scene3.mp4
 Dialogue: 0,0:00:14.74,0:00:17.27,Label,,0,0,0,,{\fad(250,200)}ಬನವಾಸಿ · ಕದಂಬ ರಾಜಧಾನಿ
-Dialogue: 0,0:00:14.54,0:00:17.37,Note,,0,0,0,,SCENE 4 PLACEHOLDER - put clips/scene4.mp4
 Dialogue: 0,0:00:17.57,0:00:21.30,Label,,0,0,0,,{\fad(250,200)}ಕಾಕುಸ್ಥವರ್ಮ · ರಾಜಸಭೆ
-Dialogue: 0,0:00:17.37,0:00:21.40,Note,,0,0,0,,SCENE 5 PLACEHOLDER - put clips/scene5.mp4
 Dialogue: 0,0:00:21.60,0:00:29.90,Label,,0,0,0,,{\fad(250,200)}ಕದಂಬ ರಾಜಲಾಂಛನ · ಸಿಂಹ
-Dialogue: 0,0:00:21.40,0:00:30.00,Note,,0,0,0,,SCENE 6 PLACEHOLDER - put clips/scene6.mp4
